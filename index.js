@@ -1,0 +1,1 @@
+console.log("scipm.file_info is not a classic nodejs/iojs module")

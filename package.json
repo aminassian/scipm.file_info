@@ -1,0 +1,70 @@
+{
+    "main": "index.js",
+    "name": "scipm.file_info",
+    "version": "0.1.0",
+    "description": "print file info to output panel",
+    "license": "GPL-3.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/aminassian/scipm.file_info.git"
+    },
+    "bugs": {
+        "type": "git",
+        "url": "git://github.com/aminassian/scipm.file_info/issues"
+    },
+    "keywords": [
+        "scipm-package"
+    ],
+    "dependencies": {
+    },
+    "scipmchild": {
+        "version": "1",
+        "scipmDependencies": {},
+        "luaRequire": [],
+        "SciTEStartup": {
+            "_use": "dofile",
+            "raw": null,
+            "filePath": null,
+            "dofile": ["scite", "main.lua"],
+            "luaReportExtend": "scipm.core.printInfoPackage('scipm.file_info')",
+            "infoLuaFunctions": [
+                {"name": "scipm.file_info.exec()"}
+            ],
+            "infoFiles" : [
+                {"path": ["README.md" ]},
+                {"path": ["package.json" ]},
+                {"path": ["scite", "main.lua" ]}
+            ],
+            "infoProps": [
+                {"name": "scipm.file_info.config.config.showCd", "value": "\"[0|1]\"", "default": "\"1\"", "description": "add cd example cli cmd"},
+                {"name": "scipm.file_info.config.config.ifWinShowCdGitBash", "value": "\"[0|1]\"", "default": "\"0\"", "description": "add cd example cli Git Bash (WIN)"},
+                {"name": "scipm.file_info.config.config.ifWinShowCdMobaXterm", "value": "\"[0|1]\"", "default": "\"0\"", "description": "add cd example cli MobaXterm (WIN)"},
+                {"name": "scipm.file_info.config.config.ifWinShowUnixFilePath", "value": "\"[0|1]\"", "default": "\"1\"", "description": "show unix FilePath if Windows (WIN)"}
+            ]
+        },
+        "actions": {
+            "file_info": {
+                "title": "ⓘ File Info",
+                "description": "print file info to output panel",
+                "pattern": [
+                    "*"
+                ],
+                "addToolsMenu": {
+                    "allow": true,
+                    "addContextMenu": true,
+                    "command": {
+                        "shortcuts": null,
+                        "subsystem": "luadirector",
+                        "cmd": "dostring scipm.file_info.exec()",
+                        "isFilter": null,
+                        "saveBefore": "2",
+                        "input": null,
+                        "replaceSelection": null,
+                        "quiet": null,
+                        "mode": null
+                    }
+                }
+            }
+        }
+    }
+}
